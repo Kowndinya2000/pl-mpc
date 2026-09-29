@@ -1,0 +1,63 @@
+nut1_bolt1_wrench1:
+  nut1:
+    urdf_path: nut1
+    width_min: 0.03
+    width_max: 0.0346
+    height: 0.0215
+    flat_length: 0.01732050808
+    density: 7850.0
+    friction: 0.0
+  bolt1:
+    urdf_path: bolt1
+    width: 0.0086
+    head_height: 0.0265
+    shank_length: 0.0595
+    density: 7850.0
+    friction: 1.0
+  wrench1:
+    urdf_path: wrench1
+    density: 7850.0
+    friction: 0.0
+    thickness: 0.0153
+nut3_bolt3_wrench3:
+  nut3:
+    urdf_path: nut3
+    width_min: 0.036
+    width_max: 0.0416
+    height: 0.0215
+    flat_length: 0.02078460969
+    density: 7850.0
+    friction: 0.0
+  bolt3:
+    urdf_path: bolt3
+    width: 0.01045
+    head_height: 0.0265
+    shank_length: 0.0595
+    density: 7850.0
+    friction: 1.0
+  wrench3:
+    urdf_path: wrench3
+    density: 7850.0
+    friction: 0.0
+    thickness: 0.0153
+nut5_bolt5_wrench5:
+  nut5:
+    urdf_path: nut5
+    width_min: 0.046
+    width_max: 0.0531
+    height: 0.0215
+    flat_length: 0.02655811238
+    density: 7850.0
+    friction: 0.0
+  bolt5:
+    urdf_path: bolt5
+    width: 0.0135
+    head_height: 0.0265
+    shank_length: 0.0595
+    density: 7850.0
+    friction: 1.0
+  wrench5:
+    urdf_path: wrench5
+    density: 7850.0
+    friction: 0.0
+    thickness: 0.0153

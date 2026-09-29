@@ -1,0 +1,276 @@
+defaults:
+- IndustRealKukaBase
+- _self_
+name: IndustRealKukaTaskWrenchInsert
+physics_engine: ${..physics_engine}
+env:
+  numEnvs: 128
+  numObservations: 17
+  numStates: 47
+  numActions: 6
+  socket_base_height: 0.01
+  num_gripper_move_sim_steps: 300
+  num_gripper_close_sim_steps: 200
+  cache_states_path: null
+  num_states_to_cache: 500
+  socket_pos_obs_noise:
+  - 0.002
+  - 0.002
+  - 0.002
+  socket_rot_obs_noise:
+  - 0.0
+  - 0.0
+  - 0.18
+randomize:
+  kuka_arm_initial_dof_pos:
+  - 0.0
+  - 0.0
+  - 0.0
+  - -1.57
+  - 0.0
+  - 1.57
+  - 0.0
+  socket_base_pos_initial:
+  - 0.0
+  - 0.0
+  - 0.1
+  socket_base_pos_noise:
+  - 0.1
+  - 0.1
+  - 0.0
+  socket_pos_z_noise_ratio_bounds:
+  - 0.7
+  - 0.8
+  plug_pos_xy_noise:
+  - 0.01
+  - 0.01
+  plug_rot_noise:
+  - 0.17
+  - 0.0
+  - 0.0
+rl:
+  action_as_object_displacement: true
+  observation_mode: full
+  pos_action_scale:
+  - 0.01
+  - 0.01
+  - 0.01
+  rot_action_scale:
+  - 0.01
+  - 0.01
+  - 0.01
+  clamp_rot: true
+  clamp_rot_thresh: 1.0e-06
+  num_keypoints: 4
+  keypoint_scale: 0.1
+  max_episode_length: 256
+  reward_type: binary
+  interpen_thresh: 0.004
+  sdf_reward_scale: 10.0
+  sdf_reward_num_samples: 1000
+  initial_max_disp: 0.01
+  curriculum_success_thresh: 0.75
+  curriculum_failure_thresh: 0.5
+  curriculum_height_step:
+  - -0.005
+  - 0.003
+  curriculum_height_bound:
+  - -0.01
+  - 0.01
+  close_error_thresh: 0.05
+  center_close_error_thresh: 0.015
+  success_height_thresh: 0.005
+  engagement_bonus: 10.0
+  zero_action_after_insertion: false
+  filter_high_interpen: false
+ctrl:
+  ctrl_type: task_space_impedance
+  all:
+    jacobian_type: geometric
+    gripper_prop_gains:
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+    - 5
+    gripper_deriv_gains:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+  gym_default:
+    ik_method: dls
+    joint_prop_gains:
+    - 40
+    - 40
+    - 40
+    - 40
+    - 40
+    - 40
+    - 40
+    joint_deriv_gains:
+    - 8
+    - 8
+    - 8
+    - 8
+    - 8
+    - 8
+    - 8
+    gripper_prop_gains:
+    - 500
+    - 500
+    gripper_deriv_gains:
+    - 20
+    - 20
+  joint_space_ik:
+    ik_method: dls
+    joint_prop_gains:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    joint_deriv_gains:
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+  joint_space_id:
+    ik_method: dls
+    joint_prop_gains:
+    - 40
+    - 40
+    - 40
+    - 40
+    - 40
+    - 40
+    - 40
+    joint_deriv_gains:
+    - 8
+    - 8
+    - 8
+    - 8
+    - 8
+    - 8
+    - 8
+  task_space_impedance:
+    motion_ctrl_axes:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    task_prop_gains:
+    - 300
+    - 300
+    - 300
+    - 50
+    - 50
+    - 50
+    task_deriv_gains:
+    - 60
+    - 60
+    - 60
+    - 3
+    - 3
+    - 3
+  operational_space_motion:
+    motion_ctrl_axes:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    task_prop_gains:
+    - 150
+    - 150
+    - 150
+    - 50
+    - 50
+    - 50
+    task_deriv_gains:
+    - 40
+    - 40
+    - 40
+    - 4.5
+    - 4.5
+    - 4.5
+  open_loop_force:
+    force_ctrl_axes:
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+  closed_loop_force:
+    force_ctrl_axes:
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    wrench_prop_gains:
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+  hybrid_force_motion:
+    motion_ctrl_axes:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    task_prop_gains:
+    - 40
+    - 40
+    - 40
+    - 40
+    - 40
+    - 40
+    task_deriv_gains:
+    - 8
+    - 8
+    - 8
+    - 8
+    - 8
+    - 8
+    force_ctrl_axes:
+    - 0
+    - 0
+    - 1
+    - 0
+    - 0
+    - 0
+    wrench_prop_gains:
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1
+    - 0.1

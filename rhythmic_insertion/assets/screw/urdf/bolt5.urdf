@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="bolt5">
+    <link name="bolt5">
+        <visual>
+            <geometry>
+                <mesh filename="../mesh/bolt/bolt5.obj"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../mesh/bolt/bolt5.obj"/>
+            </geometry>
+            <sdf resolution="512"/>
+        </collision>
+    </link>
+</robot>

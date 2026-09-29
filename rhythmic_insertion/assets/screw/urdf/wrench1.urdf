@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot name="wrench1">
+    <link name="wrench">
+        <visual>
+            <geometry>
+                <mesh filename="../mesh/wrench/wrench1.obj" scale="1 1 1"/>
+            </geometry>
+            <material name="Red">
+                <color rgba="1.0 0 0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../mesh/wrench/wrench1.obj" scale="1 1 1"/>
+            </geometry>
+            <sdf resolution="512"/>
+        </collision>
+    </link>
+    <!-- Used for calculating the wrench head pose -->
+    <joint name="wrench_head_joint" type="fixed">
+        <parent link="wrench"/>
+        <child link="wrench_head"/>
+        <origin rpy="1.5707963267948966 -1.5707963267948966 0.2617993877991494" xyz="0.00709904 -0.11152254  0.        "/> <!-- (0.03 x sin(15), -0.093 - 0.03 x cos(15), 0) --> <!-- (0.03 x sin(15), -0.098502 - 0.03 x cos(15), 0) -->
+    </joint>
+    <link name="wrench_head"/>
+</robot>

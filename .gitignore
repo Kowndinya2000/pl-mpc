@@ -1,0 +1,21 @@
+# Python and installation artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv*/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Generated run outputs and local settings
+logs/
+outputs/
+wandb/
+checkpoints/
+*.pt
+*.pth
+*.log
+.env
+.env.*
+.DS_Store

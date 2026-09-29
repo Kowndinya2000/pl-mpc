@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pl-mpc"
+version = "0.1.0"
+description = "Beyond Policy Alignment: Closing the Planning–Learning Loop for Robot Control with Learned World Models"
+readme = "README.md"
+requires-python = ">=3.8,<3.13"
+authors = [{name = "Kowndinya Boyalakuntla"}, {name = "Yuhan Liu"}, {name = "Abdeslam Boularias"}]
+
+[tool.setuptools.packages.find]
+where = ["."]
+namespaces = false
+include = ["tdmpc_square", "tdmpc_square.*", "humanoid_bench", "humanoid_bench.*", "rhythmic_insertion", "rhythmic_insertion.*"]
+
+[tool.setuptools.package-dir]
+tdmpc_square = "tdmpc_square"
+humanoid_bench = "humanoid_bench"
+
+[tool.setuptools.package-data]
+tdmpc_square = ["config.yaml"]
+humanoid_bench = ["assets/**/*"]
+rhythmic_insertion = ["assets/**/*", "sim/cfg/**/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "tdmpc_square/tests"]

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<robot name="nut1">
+    <link name="nut1">
+        <visual>
+            <geometry>
+                <mesh filename="../mesh/nut/nut1.obj"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="../mesh/nut/nut1.obj"/>
+            </geometry>
+            <sdf resolution="256"/>
+        </collision>
+    </link>
+</robot>

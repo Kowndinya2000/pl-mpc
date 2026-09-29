@@ -1,0 +1,2 @@
+# Optional W&B client for the Python 3.8 simulator environment.
+wandb==0.24.2

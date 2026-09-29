@@ -1,0 +1,10 @@
+defaults:
+- IndustRealKukaBase
+- _self_
+- /factory_schema_config_env
+env:
+  env_name: IndustRealKukaEnvWrench
+  desired_subassemblies:
+  - nut5_bolt5_wrench5
+  plug_lateral_offset: 0.1
+  is_socket_fixed: false

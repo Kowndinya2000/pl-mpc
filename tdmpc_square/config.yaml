@@ -1,0 +1,141 @@
+defaults:
+    - override hydra/launcher: submitit_local
+
+task: dog-stand
+obs: state
+
+checkpoint: ???
+eval_episodes: 10
+eval_pi: true
+eval_value: false
+eval_freq: 50000
+
+steps: 3_000_000
+batch_size: 256
+reward_coef: 0.1
+value_coef: 0.1
+consistency_coef: 20
+rho: 0.5
+lr: 3e-4
+enc_lr_scale: 0.3
+grad_clip_norm: 20
+tau: 0.01
+discount_denom: 5
+discount_min: 0.95
+discount_max: 0.995
+buffer_size: 1_000_000
+seed_steps: ???
+
+num_bins: 101
+vmin: -10
+vmax: +10
+
+model_size: ???
+num_enc_layers: 2
+enc_dim: 256
+num_channels: 32
+mlp_dim: 512
+latent_dim: 512
+task_dim: 96
+num_q: 5
+dropout: 0.01
+simnorm_dim: 8
+
+mpc: true
+iterations: 6
+num_samples: 512
+num_elites: 64
+num_pi_trajs: 24
+horizon: 3
+min_std: 0.05
+max_std: 2
+temperature: 0.5
+planner_type: "adaptive"
+lambda_uncertainty: 0.5
+lambda_uncertainty_max: 0.5
+lambda_uncertainty_floor: 0.0
+uncertainty_ema_tau: 0.01
+q_std_min: 1e-6
+q_std_max: 1e6
+beta_uncertainty_max: 0.0
+
+actor_mode: "residual"
+log_std_min: -10
+log_std_max: 2
+prior_coef: 1.0
+scale_threshold: 2.0
+entropy_coef: 1e-4
+actor_conservatism: true
+actor_q_mode: "random_avg"
+td_target_q_mode: "random_min"
+
+actor_uncertainty_coef: 0.2
+actor_uncertainty_max: 0.3
+actor_bottomk: 2
+actor_td_start_frac: 0.45
+actor_td_sharpness: 12.0
+td_start_frac: 0.35
+td_sharpness: 12.0
+lambda_uncertainty_td_max: 0.5
+
+multistep_td: true
+multistep_td_n: 3
+mtd_mode: "full"
+
+self_imitation: true
+si_coef: 0.5
+si_temperature: "auto"
+si_max_weight: 10.0
+si_warmup_steps: 200000
+si_stats_window: 256
+si_min_gstd: 0.0
+
+wandb_project: pl-mpc
+wandb_entity: null  # Use the logged-in default entity unless overridden.
+wandb_silent: false
+wandb_method: pl-mpc
+wandb_run_name: null
+wandb_group: null
+wandb_tags: []
+wandb_mode: online
+wandb_save_model: true
+disable_wandb: true
+save_csv: true
+
+save_video: false
+save_agent: true
+seed: 1
+
+work_dir: ???
+task_title: ???
+multitask: ???
+tasks: ???
+obs_shape: ???
+action_dim: ???
+episode_length: ???
+obs_shapes: ???
+action_dims: ???
+episode_lengths: ???
+bin_size: ???
+
+policy_path: ???
+mean_path: ???
+var_path: ???
+policy_type: ???
+small_obs: ???
+
+device: "cuda:0"
+
+exp_name: "default"
+
+
+# Local files are written under output_dir/task/seed/exp_name.
+output_dir: logs
+
+# Rhythmic insertion (Isaac Gym environment only)
+ri_asset_size: 5
+ri_episode_length: 256
+ri_reset_states: null
+ri_enable_camera: false
+ri_camera_resolution: 256
+ri_graphics_device_id: 0

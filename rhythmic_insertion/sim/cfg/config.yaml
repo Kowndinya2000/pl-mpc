@@ -1,0 +1,13 @@
+defaults:
+  - task: IndustRealKukaTaskWrenchInsert
+  - _self_
+physics_engine: physx
+pipeline: gpu
+sim_device: cuda:0
+rl_device: cuda:0
+graphics_device_id: 0
+num_threads: 4
+solver_type: 1
+num_subscenes: 4
+seed: 1
+headless: true
