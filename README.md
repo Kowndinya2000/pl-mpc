@@ -3,7 +3,7 @@
 Kowndinya Boyalakuntla, Yuhan Liu, Abdeslam Boularias  
 Department of Computer Science, Rutgers University
 
-[Website](https://pl-mpc-humanoid.github.io/) · [Paper](https://pl-mpc-humanoid.github.io/static/paper/pl-mpc.pdf)
+[Website](https://pl-mpc-humanoid.github.io/) · [Paper](https://arxiv.org/abs/2609.39751)
 
 ```bash
 git clone https://github.com/Kowndinya2000/pl-mpc.git
@@ -207,5 +207,13 @@ Third-party copyright and license notices are preserved in [THIRD_PARTY.md](THIR
 ## Citation
 
 ```bibtex
-
+@misc{boyalakuntla2026plmpc,
+  title         = {Beyond Policy Alignment: Closing the Planning-Learning Loop for Robot Control with Learned World Models},
+  author        = {Kowndinya Boyalakuntla and Yuhan Liu and Abdeslam Boularias},
+  year          = {2026},
+  eprint        = {2609.39751},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2609.39751}
+}
 ```

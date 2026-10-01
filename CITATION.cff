@@ -1,13 +1,29 @@
 cff-version: 1.2.0
-message: "Please cite this paper when using PL-MPC."
-title: "Beyond Policy Alignment: Closing the Planning–Learning Loop for Robot Control with Learned World Models"
+message: Please cite this paper when using PL-MPC.
+title: 'Beyond Policy Alignment: Closing the Planning–Learning Loop for Robot Control with Learned World Models'
 type: software
 authors:
+- family-names: Boyalakuntla
+  given-names: Kowndinya
+  affiliation: Rutgers University
+- family-names: Liu
+  given-names: Yuhan
+  affiliation: Rutgers University
+- family-names: Boularias
+  given-names: Abdeslam
+  affiliation: Rutgers University
+url: https://pl-mpc-humanoid.github.io/
+repository-code: https://github.com/Kowndinya2000/pl-mpc
+preferred-citation:
+  type: article
+  title: 'Beyond Policy Alignment: Closing the Planning-Learning Loop for Robot Control with Learned World Models'
+  authors:
   - family-names: Boyalakuntla
     given-names: Kowndinya
   - family-names: Liu
     given-names: Yuhan
   - family-names: Boularias
     given-names: Abdeslam
-url: https://pl-mpc-humanoid.github.io/
-repository-code: https://github.com/Kowndinya2000/pl-mpc
+  year: 2026
+  journal: arXiv
+  url: https://arxiv.org/abs/2609.39751
